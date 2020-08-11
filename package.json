@@ -1,0 +1,49 @@
+{
+	"name": "vl-ui-code-preview",
+	"version": "0.0.0",
+	"description": "De code preview component toont code blokken op basis van de code taal.",
+	"author": "DIDM",
+	"license": "MIT",
+	"main": "./src/index.js",
+	"exports": {
+		"require": "./index.js",
+		"import": "./src/index.js",
+		"node": "./index.js",
+		"default": "./index.js"
+	},
+	"homepage": "https://github.com/milieuinfo/webcomponent-vl-ui-code-preview#readme",
+	"bugs": {
+		"url": "https://github.com/milieuinfo/webcomponent-vl-ui-code-preview/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/milieuinfo/webcomponent-vl-ui-code-preview.git"
+	},
+	"publishConfig": {
+		"registry": "http://artifactory-pr-build.lb.cumuli.be:8081/artifactory/api/npm/acd-npm/"
+	},
+	"scripts": {
+		"prepare": "npm update --dev vl-ui-util && npm run prepare:util",
+		"prepare:util": "npm explore vl-ui-util -- npm run util",
+		"test": "npm explore vl-ui-util -- npm run test:component",
+		"test:grid": "npm explore vl-ui-util -- npm run test:component:grid",
+		"test:unit": "npm explore vl-ui-util -- npm run test:component:unit",
+		"test:unit:grid": "npm explore vl-ui-util -- npm run test:component:unit:grid",
+		"test:e2e": "npm explore vl-ui-util -- npm run test:component:e2e",
+		"test:e2e:grid": "npm explore vl-ui-util -- npm run test:component:e2e:grid",
+		"release": "npm explore vl-ui-util -- npm run release",
+		"release:prepare": "npm explore vl-ui-util -- npm run release-component:prepare $(pwd) code-preview",
+		"release:testless": "npm explore vl-ui-util -- npm run release:testless",
+		"demo": "http-server"
+	},
+	"dependencies": {
+		"vl-ui-core": "5.5.5"
+	},
+	"peerDependencies": {
+		"vl-ui-core": "^5.5.5"
+	},
+	"devDependencies": {
+		"@govflanders/vl-ui-util": "3.9.1",
+		"vl-ui-util": "^5.2.9"
+	}
+}
