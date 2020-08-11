@@ -5,20 +5,35 @@
   <meta charset="utf-8">
   <script src="../../../@webcomponents/webcomponentsjs/webcomponents-lite.js"></script>
   <script src="../../../web-component-tester/browser.js"></script>
+  <script src="/node_modules/sinon/pkg/sinon.js"></script>
 
   <script type="module" src="../../src/vl-code-preview.js"></script>
 </head>
 
 <body>
-  <test-fixture id="">
+  <test-fixture id="vl-code-preview-fixture">
     <template>
+      <vl-code-preview>
+        <p>child 1</p>
+        <span>child 2</span>
+      </vl-code-preview>
     </template>
   </test-fixture>
 
   <script>
     suite('vl-code-preview', () => {
-      test('', () => {
+      const sandbox = sinon.createSandbox();
 
+      test('de code preview dress wordt correct aangeroepen', () => {
+        sandbox.spy(vl.codePreview, 'dress');
+        const element = fixture('vl-code-preview-fixture');
+        assert(vl.codePreview.dress.calledWith(element._element));
+      });
+
+      test('de child elementen worden verplaatst naar het code element', () => {
+        const element = fixture('vl-code-preview-fixture');
+        assert.lengthOf(element.children, 0);
+        assert.isTrue(element._codeElement.children.length > 0);
       });
     });
   </script>
