@@ -10,6 +10,11 @@ describe('vl-code-preview', async () => {
 
   it('als gebruiker kan ik de code preview bekijken', async () => {
     const element = await vlCodePreviewPage.getCodePreview();
-    await assert.eventually.equal(element.getText(), 'test');
+    const text = await element.getText();
+    await assert.include(text, '<h3>This is a title</h3>');
+    await assert.include(text, '<h2>This is a subtitle</h2>');
+    await assert.include(text, '<p>test</p>');
+    await assert.include(text, '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam impedit dolor maxime incidunt eos labore aut delectus, omnis repellat officia id dolores, magni velit beatae similique ex optio enim, nulla.</p>');
+    await assert.include(text, '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>');
   });
 });

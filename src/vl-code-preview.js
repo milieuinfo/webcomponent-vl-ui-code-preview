@@ -19,14 +19,14 @@ import '/node_modules/@govflanders/vl-ui-code-preview/dist/js/code-preview.js';
 export class VlCodePreview extends vlElement(HTMLElement) {
   constructor() {
     super(`
-        <style>
-            @import '/src/style.css';
-        </style>
-        <div class="vl-code-preview" data-vl-code-preview data-vl-code-preview-no-copy>
-            <pre class="line-numbers">
-                <code class="language-markup auto-indent"></code>
-            </pre>
-        </div>
+      <style>
+        @import '/src/style.css';
+      </style>
+      <div class="vl-code-preview" data-vl-code-preview data-vl-code-preview-no-copy-button>
+        <pre class="line-numbers">
+          <code class="language-markup auto-indent"></code>
+        </pre>
+      </div>
     `);
 
     this._dress();
