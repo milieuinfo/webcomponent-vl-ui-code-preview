@@ -1,6 +1,6 @@
 {
 	"name": "vl-ui-code-preview",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "De code preview component toont code blokken op basis van de code taal.",
 	"author": "DIDM",
 	"license": "MIT",
