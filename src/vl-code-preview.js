@@ -37,9 +37,7 @@ export class VlCodePreview extends vlElement(HTMLElement) {
   }
 
   _dress() {
-    [...this.children].forEach((child) => {
-      this._codeElement.append(child);
-    });
+    [...this.children].forEach((child) => this._codeElement.append(child));
     vl.codePreview.dress(this._element);
   }
 }
