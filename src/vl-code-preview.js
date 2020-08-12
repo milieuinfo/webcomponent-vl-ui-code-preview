@@ -6,7 +6,7 @@ import '/node_modules/@govflanders/vl-ui-code-preview/dist/js/code-preview.js';
 /**
  * VlCodePreview
  * @class
- * @classdesc
+ * @classdesc De code preview visualiseert de broncode.
  *
  * @extends HTMLElement
  * @mixes vlElement
