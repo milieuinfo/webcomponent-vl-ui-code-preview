@@ -47,6 +47,6 @@
 	},
 	"devDependencies": {
 		"vl-ui-body": "^1.0.4",
-		"vl-ui-util": "^5.2.13"
+		"vl-ui-util": "^5.2.16"
 	}
 }
