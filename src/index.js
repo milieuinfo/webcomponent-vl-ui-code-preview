@@ -1,3 +1,1 @@
-module.exports = {
-  VlCodePreview: require('../dist/vl-code-preview.src.js').VlCodePreview,
-};
+export * from '../dist/vl-code-preview.src.js';
