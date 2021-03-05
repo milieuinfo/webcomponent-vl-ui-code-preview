@@ -35,6 +35,11 @@
         assert.lengthOf(element.children, 0);
         assert.isTrue(element._codeElement.children.length > 0);
       });
+
+      test('WCAG code element moet tabindex bevatten', () => {
+        const element = fixture('vl-code-preview-fixture');
+        assert.equal(element._codeElement.getAttribute('tabindex'), 0);
+      });
     });
   </script>
 </body>
