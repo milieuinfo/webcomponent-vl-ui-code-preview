@@ -9,6 +9,10 @@ describe('vl-code-preview', async () => {
     return vlCodePreviewPage.load();
   });
 
+  it('WCAG', async () => {
+    await assert.eventually.isFalse(vlCodePreviewPage.hasWcagIssues());
+  });
+
   it('als gebruiker kan ik de code preview bekijken', async () => {
     const element = await vlCodePreviewPage.getCodePreview();
     const text = await element.getText();
